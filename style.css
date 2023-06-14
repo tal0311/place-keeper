@@ -27,6 +27,7 @@ header {
 nav ul {
  grid-auto-flow: column;
  place-items: center;
+ text-transform: capitalize;
 }
 nav li,
 .logo {
@@ -63,6 +64,9 @@ nav li,
 .loc-list li {
  grid-auto-flow: column;
  grid-template-columns: 1fr max-content;
+}
+.active {
+ text-decoration: overline;
 }
 
 .grid {

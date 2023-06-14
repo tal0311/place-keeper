@@ -1,6 +1,5 @@
 function initHome() {
   console.log('%c init home', 'color:lightgreen')
-
   navigateTo()
 }
 
@@ -18,16 +17,18 @@ function navigateTo(route = 'map') {
       : (page.hidden = false)
   })
   renderBy(route)
-  // setActiveClass(route)
+  setActiveClass(route)
 }
 
-// function setActiveClass(route) {
-//  const elLinks = document.querySelectorAll('header a')
-//  elLinks.forEach((link) => {
-//   link.classList.remove('active')
-//   if (link.name === route) link.classList.add('active')
-//  })
-// }
+function setActiveClass(route) {
+  debugger
+  const elLinks = document.querySelectorAll('nav li')
+  elLinks.forEach((link) => {
+    const linkName = link.getAttribute('name')
+    link.classList.remove('active')
+    if (linkName === route) link.classList.add('active')
+  })
+}
 
 function renderBy(route) {
   switch (route) {
