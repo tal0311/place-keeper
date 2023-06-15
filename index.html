@@ -6,29 +6,34 @@
   <link rel="stylesheet" href="style.css">
   <title>Place Keeper</title>
 </head>
-<body onload="initHome()" class="grid">
-  <header class="app-header grid">
-    <div class="logo" onclick="navigateTo('home')">Place Kipper</div>
-    <nav>
-      <ul class="clean-list grid">
-        <li name="home" onclick="navigateTo('home')">Home</li>
-        <li name="user" onclick="navigateTo('user')">user</li>
-        <li name="map" onclick="navigateTo('map')">map</li>
-      </ul>
-    </nav>
+<body onload="initHome()" class="">
+  <header class="app-header main-layout">
+    <section class="header-container grid">
+
+      <div class="logo" onclick="navigateTo('home')">Place Kipper</div>
+      <nav>
+        <ul class="clean-list grid">
+          <li name="home" onclick="navigateTo('home')">Home</li>
+          <li name="user" onclick="navigateTo('user')">user</li>
+          <li name="map" onclick="navigateTo('map')">map</li>
+        </ul>
+      </nav>
+    </section>
   </header>
   <!-- home page -->
   <section class="home page">
-    <section class="home-page">
-      <h1>Place keeper</h1>
-      <h2 class="greet"></h2>
-      <h2>"Of all the books in the world. The best stories are found between the pages of a passport"</h2>
-      <h2>Still here? <button onclick="navigateTo('map')">Discover your next step in our map!</button></h2>
+    <section class="home-page main-layout">
+      <h1>Place <span>keep</span>er</h1>
+      <!-- <h2 class="greet"></h2> -->
+      <h2><q>Of all the books in the world. The best stories are found between the pages of a passport</q></h2>
+      <h2>Still here? Discover your next step in our <span class="map-link" onclick="navigateTo('map')">map!</span>
+      </h2>
+
     </section>
   </section>
   <!-- user page -->
   <section class="user page">
-    <section class="user-page">
+    <section class="user-page main-layout">
       <form onsubmit="handleSubmit(event)">
         <div>
           <label for="name">Enter your name</label>
@@ -68,9 +73,11 @@
   </section>
   <!-- map page -->
   <section class="map page">
-    <section class="map-page grid">
-      <div id="map"></div>
-      <ul class="loc-list clean-list "></ul>
+    <section class="map-page main-layout">
+      <main class="grid">
+        <div id="map"></div>
+        <ul class="loc-list clean-list "></ul>
+      </main>
     </section>
   </section>
   </section>

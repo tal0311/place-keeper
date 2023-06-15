@@ -8,7 +8,7 @@ function initGallery() {
 
 }
 
-function navigateTo(route = 'map') {
+function navigateTo(route = 'home') {
   const pages = [...document.querySelectorAll('.page')]
   const elBody = document.querySelector('body')
   pages.forEach((page) => {
@@ -21,7 +21,7 @@ function navigateTo(route = 'map') {
 }
 
 function setActiveClass(route) {
-  debugger
+
   const elLinks = document.querySelectorAll('nav li')
   elLinks.forEach((link) => {
     const linkName = link.getAttribute('name')
@@ -33,14 +33,15 @@ function setActiveClass(route) {
 function renderBy(route) {
   switch (route) {
     case 'user':
+      // in User controller
       initUser()
       break
     case 'map':
-      // in saved controller
+      // in Map controller
       initMap()
       break
     case 'home':
-    // in editor controller
+    // in Home controller
     default:
       break
   }
