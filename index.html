@@ -46,7 +46,7 @@
         <label>
           Zoom in your map
         </label>
-        <input oninput="renderValue({value})" name="zoom" type="range" min="1" max="21" />
+        <input name="zoom" type="range" min="1" max="21" />
         <!-- <span class="rangeValue"></span> -->
 
         <label>
@@ -86,7 +86,13 @@
   </section>
   <!-- modal -->
   <dialog class="app-modal">
-    <h1>app modal</h1>
+
+    <h1>Add your place name</h1>
+    <form onsubmit="onAddPlaceName(event)" class="grid">
+      <input type="text" name="name" placeholder="Name your place">
+      <button class="primary-btn">Add Place</button>
+      <button class="cancel-btn" onclick="onCancelPlace(event)">Cancel</button>
+    </form>
   </dialog>
 
   <script src="js/services/storage.service.js"></script>

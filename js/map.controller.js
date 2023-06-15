@@ -90,15 +90,34 @@ function renderMapController() {
 }
 
 function onAddLoc(ev) {
-  const name = prompt('Place name?', 'Place 1')
+  toggleModal()
   const lat = ev.latLng.lat()
   const lng = ev.latLng.lng()
-  addPlace(name, lat, lng)
-  renderLocs()
-  renderMarkers()
+  addPlaceCoords(lat, lng)
 }
 
 function onDownloadCSV(elLink) {
   const csvContent = getPlacesAsCSV()
   elLink.href = 'data:text/csv;charset=utf-8,' + csvContent
+}
+
+function toggleModal() {
+  const elModal = document.querySelector('.app-modal')
+  elModal.open ? elModal.close() : elModal.showModal()
+  console.log('elModal:', elModal)
+}
+
+function onCancelPlace(ev) {
+  ev.preventDefault();
+  toggleModal()
+  cancelAddPlace()
+}
+
+function onAddPlaceName(ev) {
+  ev.preventDefault()
+  const locName = Object.fromEntries(new FormData(ev.target))
+  addPlaceName(locName)
+  renderLocs()
+  renderMarkers()
+  toggleModal()
 }
