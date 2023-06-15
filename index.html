@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Place Keeper</title>
 </head>
 <body onload="initHome()" class="">
@@ -34,32 +36,33 @@
   <!-- user page -->
   <section class="user page">
     <section class="user-page main-layout">
-      <form onsubmit="handleSubmit(event)">
-        <div>
-          <label for="name">Enter your name</label>
-          <input id="name" name="name" type="text" placeholder="Fullname..." autofocus />
-        </div>
-        <div>
-          <label>Zoom in your map</label>
-          <input oninput="renderValue({value})" name="zoom" type="range" min="1" max="21" />
-          <span class="rangeValue"></span>
-        </div>
-        <div>
-          <label>Background color - </label>
+      <form class="grid" onsubmit="handleSubmit(event)">
+
+        <label for="name">
+          Enter your name
+        </label>
+        <input id="name" name="name" type="text" placeholder="Fullname..." autofocus />
+
+        <label>
+          Zoom in your map
+        </label>
+        <input oninput="renderValue({value})" name="zoom" type="range" min="1" max="21" />
+        <!-- <span class="rangeValue"></span> -->
+
+        <label>
+          Background color
           <input name="bgColor" type="color" value="#f1f1f1" />
-        </div>
-        <div>
-          <label>Font color - </label>
+        </label>
+
+        <label>Font color
+
           <input name="txtColor" type="color" value="#212529" />
-        </div>
-        <div>
-          <label for="myLoc">Choose a start location:</label>
-          <input list="loc" id="myLoc" name="loc" placeholder="XX, YY" />
-        </div>
-        <div>
-          <label for="DOB">Date Of Birth</label>
-          <input type="date" id="DOB" name="DOB" placeholder="XX, YY" />
-        </div>
+        </label>
+        <label for="myLoc">Choose a start location:</label>
+        <input list="loc" id="myLoc" name="loc" placeholder="XX, YY" />
+        <label for="DOB">Date Of Birth</label>
+        <input type="date" id="DOB" name="DOB" placeholder="XX, YY" />
+
         <!-- The user can also enter comma separated lat & lng values into the datalist -->
         <datalist id="loc">
           <option value="Current location">Current location</option>

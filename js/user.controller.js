@@ -9,7 +9,7 @@ function handleSubmit(ev) {
  const elForm = ev.target
  const formData = new FormData(elForm)
  const user = Object.fromEntries(formData)
- console.log('user:', user)
+
  setUser(user)
  renderUserPrefs()
 }
@@ -17,8 +17,9 @@ function handleSubmit(ev) {
 function renderUserPrefs() {
  const user = getUser()
  if (!user) return
- const { bgColor, textColor } = user
+ const { bgColor, txtColor } = user
+ console.log('bgColor, textColor:', bgColor, txtColor)
  const elBody = document.querySelector('body')
  elBody.style.backgroundColor = bgColor
- elBody.style.color = textColor
+ elBody.style.color = txtColor
 }

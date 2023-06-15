@@ -9,7 +9,9 @@ const STORAGE_KEY_LOC = 'loc'
 // }
 
 function setUser(user) {
- saveToStorage(STORAGE_KEY, user)
+ let userToEdit = getUser()
+ userToEdit = { ...userToEdit, ...user }
+ saveToStorage(STORAGE_KEY, userToEdit)
 }
 
 function getUser() {

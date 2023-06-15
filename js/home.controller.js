@@ -8,7 +8,7 @@ function initGallery() {
 
 }
 
-function navigateTo(route = 'home') {
+function navigateTo(route = 'user') {
   const pages = [...document.querySelectorAll('.page')]
   const elBody = document.querySelector('body')
   pages.forEach((page) => {
@@ -16,8 +16,14 @@ function navigateTo(route = 'home') {
       ? (page.hidden = true)
       : (page.hidden = false)
   })
+
   renderBy(route)
   setActiveClass(route)
+  setTitleByRoute(route)
+}
+
+function setTitleByRoute(route) {
+  document.title = route.substring(0, 1).toUpperCase() + route.substring(1)
 }
 
 function setActiveClass(route) {

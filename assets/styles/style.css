@@ -1,3 +1,5 @@
+@import "./input.css";
+
 * {
  /* box-sizing: border-box; */
  margin: 0;
@@ -11,16 +13,37 @@
 html {
  font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
- grid-template-rows: 50px auto;
  height: 100vh;
  overflow: hidden;
+}
+
+input[type="text"] {
+ padding: 0.2em;
+ font-size: 1rem;
+}
+input[type="text"]:focus {
+ outline-color: var(--Clr1);
+}
+
+input[type="color"] {
+ appearance: none;
+ background: none;
+ border: 0;
+ border-radius: 50%;
+ cursor: pointer;
+ padding: 0;
+ height: 2.3em;
+ width: 2em;
+}
+input[type="color"]::-webkit-color-swatch {
+ border-radius: 50%;
 }
 
 header {
  padding: 1em 0;
  background: var(--Clr1);
- /* grid-auto-flow: column; */
  color: var(--Clr3);
 }
 header .header-container {
@@ -64,9 +87,23 @@ nav li,
  background: var(--Clr1);
  color: var(--Clr3);
 }
+.loc-list {
+ overflow: auto;
+ max-height: 50vh;
+ padding: 0.5em;
+}
 .loc-list li {
  grid-auto-flow: column;
  grid-template-columns: 1fr max-content;
+}
+.loc-preview {
+ grid-auto-flow: column;
+ grid-template-columns: 1fr max-content;
+ margin: 1em 0;
+ box-shadow: 0 0 0 1px #9b9b9b;
+ padding: 0.5em;
+ border-radius: 0.3em;
+ align-items: center;
 }
 .active {
  text-decoration: overline;
@@ -126,5 +163,22 @@ nav li,
  cursor: pointer;
 }
 
-.usr-page {
+.user-page.main-layout {
+ height: 90vh;
+ place-items: center;
+}
+
+.user-page form {
+ width: 100%;
+ max-width: 400px;
+ gap: 1em;
+}
+.user-page form button {
+ width: 50%;
+ margin-inline-start: auto;
+ display: block;
+}
+
+.material-symbols-outlined {
+ font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
 }
