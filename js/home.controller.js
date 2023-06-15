@@ -1,5 +1,6 @@
 function initHome() {
   console.log('%c init home', 'color:lightgreen')
+  setUserMsg('welcome back')
   navigateTo()
 }
 
@@ -8,7 +9,7 @@ function initGallery() {
 
 }
 
-function navigateTo(route = 'user') {
+function navigateTo(route = 'home') {
   const pages = [...document.querySelectorAll('.page')]
   const elBody = document.querySelector('body')
   pages.forEach((page) => {

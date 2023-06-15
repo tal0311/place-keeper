@@ -1,5 +1,5 @@
 function initUser() {
- console.log('init user');
+ console.log('%c init user', 'color:lightgreen')
  renderUserPrefs()
 }
 
@@ -9,15 +9,14 @@ function handleSubmit(ev) {
  const userPrefs = Object.fromEntries(new FormData(ev.target))
 
  setUser(userPrefs)
+ setUserMsg('Setting usr preferences')
  renderUserPrefs()
 }
 
 function renderUserPrefs() {
- setUserMsg('Setting usr preferences')
  const user = getUser()
  if (!user) return
  const { bgColor, txtColor } = user
- console.log('bgColor, textColor:', bgColor, txtColor)
  const elBody = document.querySelector('body')
  elBody.style.backgroundColor = bgColor
  elBody.style.color = txtColor

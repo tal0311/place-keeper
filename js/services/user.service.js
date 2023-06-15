@@ -10,7 +10,7 @@ function setUser(user) {
 }
 
 function getUser() {
- return loadFromStorage(STORAGE_KEY)
+ return loadFromStorage(STORAGE_KEY) || null
 }
 
 function saveSelectedPlace(loc) {

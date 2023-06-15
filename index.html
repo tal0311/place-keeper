@@ -11,7 +11,6 @@
 <body onload="initHome()" class="">
   <header class="app-header main-layout">
     <section class="header-container grid">
-
       <div class="logo" onclick="navigateTo('home')">Place Kipper</div>
       <nav>
         <ul class="clean-list grid">
@@ -34,7 +33,7 @@
   </section>
 
   <!-- user page -->
-  <section class="user page">
+  <section class="user page" hidden>
     <section class="user-page main-layout">
       <form class="grid" onsubmit="handleSubmit(event)">
 
@@ -67,7 +66,7 @@
   </section>
 
   <!-- map page -->
-  <section class="map page">
+  <section class="map page" hidden>
     <section class="map-page main-layout">
       <main class="grid">
         <div id="map"></div>

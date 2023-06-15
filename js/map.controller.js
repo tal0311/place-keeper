@@ -3,7 +3,7 @@ var gMarkers = []
 var gMap
 function initMap() {
   setUserMsg('Setting Up your Map end locations')
-  console.log('initMap:')
+  console.log('%c init Map', 'color:lightgreen')
   const defaultLoc = { lat: 29.55036, lng: 34.952278 }
   gMap = new google.maps.Map(document.querySelector('#map'), {
     zoom: 12,
