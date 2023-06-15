@@ -8,3 +8,10 @@ function makeId(length = 6) {
  }
  return txt
 }
+
+function setUserMsg(msg) {
+ document.querySelector('.user-msg').classList.toggle('open')
+ if (!msg) return
+ document.querySelector('.msg-txt').innerText = msg || ''
+ setTimeout(setUserMsg, 2000)
+}

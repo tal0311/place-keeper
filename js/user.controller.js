@@ -6,15 +6,14 @@ function initUser() {
 function handleSubmit(ev) {
  ev.preventDefault()
  console.log('ev', ev)
- const elForm = ev.target
- const formData = new FormData(elForm)
- const user = Object.fromEntries(formData)
+ const userPrefs = Object.fromEntries(new FormData(ev.target))
 
- setUser(user)
+ setUser(userPrefs)
  renderUserPrefs()
 }
 
 function renderUserPrefs() {
+ setUserMsg('Setting usr preferences')
  const user = getUser()
  if (!user) return
  const { bgColor, txtColor } = user

@@ -2,6 +2,7 @@
 var gMarkers = []
 var gMap
 function initMap() {
+  setUserMsg('Setting Up your Map end locations')
   console.log('initMap:')
   const defaultLoc = { lat: 29.55036, lng: 34.952278 }
   gMap = new google.maps.Map(document.querySelector('#map'), {
@@ -43,7 +44,7 @@ function renderLocs() {
 }
 
 function onRemovePlace(placeId) {
-  console.log('placeId', placeId)
+  setUserMsg('Place removed')
   removePlace(placeId)
   renderLocs()
   renderMarkers()
@@ -58,6 +59,7 @@ function onPanToPlace(placeId) {
 }
 
 function onPanToUserLoc() {
+  setUserMsg('Getting user locations')
   navigator.geolocation.getCurrentPosition(setCenterToUserLoc)
 }
 
@@ -97,6 +99,7 @@ function onAddLoc(ev) {
 }
 
 function onDownloadCSV(elLink) {
+  setUserMsg('Downloading places file')
   const csvContent = getPlacesAsCSV()
   elLink.href = 'data:text/csv;charset=utf-8,' + csvContent
 }
@@ -108,12 +111,14 @@ function toggleModal() {
 }
 
 function onCancelPlace(ev) {
+  setUserMsg('Cancel adding place')
   ev.preventDefault();
   toggleModal()
   cancelAddPlace()
 }
 
 function onAddPlaceName(ev) {
+  setUserMsg('Adding new place')
   ev.preventDefault()
   const locName = Object.fromEntries(new FormData(ev.target))
   addPlaceName(locName)

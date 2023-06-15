@@ -1,17 +1,12 @@
 const STORAGE_KEY = 'user_db'
 const STORAGE_KEY_LOC = 'loc'
 
-// const user = {
-//  email: '',
-//  txtColor: '',
-//  bgColor: '',
-//  DOB: '',
-// }
 
 function setUser(user) {
- let userToEdit = getUser()
- userToEdit = { ...userToEdit, ...user }
- saveToStorage(STORAGE_KEY, userToEdit)
+ console.log('user:', user)
+ // let userToEdit = getUser()
+ // userToEdit = { ...userToEdit, ...user }
+ // saveToStorage(STORAGE_KEY, userToEdit)
 }
 
 function getUser() {

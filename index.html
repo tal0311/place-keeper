@@ -30,9 +30,9 @@
       <h2><q>Of all the books in the world. The best stories are found between the pages of a passport</q></h2>
       <h2>Still here? Discover your next step in our <span class="map-link" onclick="navigateTo('map')">map!</span>
       </h2>
-
     </section>
   </section>
+
   <!-- user page -->
   <section class="user page">
     <section class="user-page main-layout">
@@ -59,21 +59,13 @@
           <input name="txtColor" type="color" value="#212529" />
         </label>
         <label for="myLoc">Choose a start location:</label>
-        <input list="loc" id="myLoc" name="loc" placeholder="XX, YY" />
         <label for="DOB">Date Of Birth</label>
         <input type="date" id="DOB" name="DOB" placeholder="XX, YY" />
-
-        <!-- The user can also enter comma separated lat & lng values into the datalist -->
-        <datalist id="loc">
-          <option value="Current location">Current location</option>
-          <option value="First saved location"></option>
-          <option value="Random saved location"></option>
-          <option value="Last selected saved location"></option>
-        </datalist>
         <button class="primary-btn">Save Changes</button>
       </form>
     </section>
   </section>
+
   <!-- map page -->
   <section class="map page">
     <section class="map-page main-layout">
@@ -84,9 +76,9 @@
     </section>
   </section>
   </section>
+
   <!-- modal -->
   <dialog class="app-modal">
-
     <h1>Add your place name</h1>
     <form onsubmit="onAddPlaceName(event)" class="grid">
       <input type="text" name="name" placeholder="Name your place">
@@ -94,6 +86,10 @@
       <button class="cancel-btn" onclick="onCancelPlace(event)">Cancel</button>
     </form>
   </dialog>
+
+  <section class="user-msg">
+    <h4 class="msg-txt">user msg</h4>
+  </section>
 
   <script src="js/services/storage.service.js"></script>
   <script src="js/services/util.service.js"></script>
