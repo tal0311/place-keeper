@@ -40,7 +40,7 @@ function renderBy(route) {
    break
   case 'home':
    setDocTitleAndIcon('home', 'Home')
-  // in Home controller
+   initHome()
   default:
    break
  }
