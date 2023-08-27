@@ -21,7 +21,6 @@ function getPlaceById(placeId) {
 
 
 function _createPlace({ name, lat, lng, zoom = 10 }) {
- //{id: '1p2', lat: 32.1416, lng: 34.831213, name: 'Pukis house'}
  return { id: makeId(), lat, lng, name, zoom }
 }
 
@@ -38,13 +37,12 @@ function _createPlaces() {
 }
 
 function cancelAddPlace() {
- console.log('cancel place:',)
+
  gLocToAdd = null
 }
 
 function addPlaceCoords(lat, lng) {
  gLocToAdd = { lat, lng }
- console.log('gLocToAdd addPlaceCoords:', gLocToAdd)
 }
 
 function addPlaceName({ name }) {

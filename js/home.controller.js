@@ -40,16 +40,23 @@ function setActiveClass(route) {
 function renderBy(route) {
   switch (route) {
     case 'user':
-      // in User controller
+      setDocTitleAndIcon('user', 'User Preferences')
       initUser()
       break
     case 'map':
       // in Map controller
+      setDocTitleAndIcon('map', 'Map')
       initMap()
       break
     case 'home':
+      setDocTitleAndIcon('home', 'Home')
     // in Home controller
     default:
       break
   }
+}
+
+function setDocTitleAndIcon(prop, val) {
+  document.title = val
+  document.querySelector(`link[rel*="icon"]`).href = `/assets/images/${prop}.svg`
 }
