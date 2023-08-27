@@ -3,7 +3,6 @@
 
 * {
  box-sizing: border-box;
- /* margin: 0; */
  padding: 0;
 }
 :root {
@@ -54,11 +53,15 @@ header .header-container {
  grid-auto-flow: column;
  align-items: center;
 }
-
+nav {
+ max-width: 300px;
+ justify-self: end;
+}
 nav ul {
  grid-auto-flow: column;
  place-items: end;
  text-transform: capitalize;
+ gap: 1rem;
 }
 nav li,
 .logo {
@@ -198,5 +201,9 @@ nav li,
  gap: 0.5em;
 }
 .material-symbols-outlined {
- font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+ font-variation-settings:
+  "FILL" 0,
+  "wght" 300,
+  "GRAD" 0,
+  "opsz" 24;
 }
